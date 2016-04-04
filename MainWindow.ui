@@ -82,9 +82,9 @@
    <addaction name="actionZoom_Out"/>
    <addaction name="actionZoom_All"/>
    <addaction name="separator"/>
-   <addaction name="actionLine"/>
-   <addaction name="actionCircle"/>
    <addaction name="actionRectangle"/>
+   <addaction name="actionCircle"/>
+   <addaction name="actionLine"/>
    <addaction name="separator"/>
    <addaction name="actionDelete"/>
    <addaction name="actionUndo"/>
@@ -98,7 +98,7 @@
    </property>
    <property name="icon">
     <iconset resource="resources.qrc">
-     <normaloff>:/Icons/Icons/rectangle.png</normaloff>:/Icons/Icons/rectangle.png</iconset>
+     <normaloff>:/Icons/Icons/line.png</normaloff>:/Icons/Icons/line.png</iconset>
    </property>
    <property name="text">
     <string>Line</string>
@@ -110,7 +110,7 @@
    </property>
    <property name="icon">
     <iconset resource="resources.qrc">
-     <normaloff>:/Icons/Icons/line.png</normaloff>:/Icons/Icons/line.png</iconset>
+     <normaloff>:/Icons/Icons/rectangle.png</normaloff>:/Icons/Icons/rectangle.png</iconset>
    </property>
    <property name="text">
     <string>Rectangle</string>
