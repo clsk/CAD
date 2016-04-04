@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>569</width>
+    <height>422</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
+   <widget class="QGraphicsView" name="graphicsView">
+    <property name="geometry">
+     <rect>
+      <x>-5</x>
+      <y>0</y>
+      <width>581</width>
+      <height>381</height>
+     </rect>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>569</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuDraw">
+    <property name="title">
+     <string>Draw</string>
+    </property>
+    <addaction name="actionLine"/>
+    <addaction name="actionRectangle"/>
+    <addaction name="actionCircle"/>
+   </widget>
+   <widget class="QMenu" name="menuView">
+    <property name="title">
+     <string>View</string>
+    </property>
+    <addaction name="actionSelect"/>
+    <addaction name="actionPan"/>
+    <addaction name="actionZoom_In"/>
+    <addaction name="actionZoom_Out"/>
+    <addaction name="actionZoom_All"/>
+   </widget>
+   <widget class="QMenu" name="menuEdit">
+    <property name="title">
+     <string>Edit</string>
+    </property>
+    <addaction name="actionUndo"/>
+    <addaction name="actionRedo"/>
+    <addaction name="actionDelete"/>
+   </widget>
+   <addaction name="menuView"/>
+   <addaction name="menuDraw"/>
+   <addaction name="menuEdit"/>
+  </widget>
+  <widget class="QToolBar" name="mainToolBar">
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+   <addaction name="actionSelect"/>
+   <addaction name="actionPan"/>
+   <addaction name="actionZoom_In"/>
+   <addaction name="actionZoom_Out"/>
+   <addaction name="actionZoom_All"/>
+   <addaction name="separator"/>
+   <addaction name="actionLine"/>
+   <addaction name="actionCircle"/>
+   <addaction name="actionRectangle"/>
+   <addaction name="separator"/>
+   <addaction name="actionDelete"/>
+   <addaction name="actionUndo"/>
+   <addaction name="actionRedo"/>
+  </widget>
+  <widget class="QStatusBar" name="statusBar"/>
+  <action name="actionLine">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="resources.qrc">
+     <normaloff>:/Icons/Icons/rectangle.png</normaloff>:/Icons/Icons/rectangle.png</iconset>
+   </property>
+   <property name="text">
+    <string>Line</string>
+   </property>
+  </action>
+  <action name="actionRectangle">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="resources.qrc">
+     <normaloff>:/Icons/Icons/line.png</normaloff>:/Icons/Icons/line.png</iconset>
+   </property>
+   <property name="text">
+    <string>Rectangle</string>
+   </property>
+  </action>
+  <action name="actionCircle">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="resources.qrc">
+     <normaloff>:/Icons/Icons/circle.png</normaloff>:/Icons/Icons/circle.png</iconset>
+   </property>
+   <property name="text">
+    <string>Circle</string>
+   </property>
+  </action>
+  <action name="actionSelect">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="resources.qrc">
+     <normaloff>:/Icons/Icons/move.png</normaloff>:/Icons/Icons/move.png</iconset>
+   </property>
+   <property name="text">
+    <string>Select</string>
+   </property>
+  </action>
+  <action name="actionPan">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="resources.qrc">
+     <normaloff>:/Icons/Icons/pan.png</normaloff>:/Icons/Icons/pan.png</iconset>
+   </property>
+   <property name="text">
+    <string>Pan</string>
+   </property>
+  </action>
+  <action name="actionZoom_In">
+   <property name="icon">
+    <iconset resource="resources.qrc">
+     <normaloff>:/Icons/Icons/zoomin.png</normaloff>:/Icons/Icons/zoomin.png</iconset>
+   </property>
+   <property name="text">
+    <string>Zoom In</string>
+   </property>
+  </action>
+  <action name="actionZoom_Out">
+   <property name="icon">
+    <iconset resource="resources.qrc">
+     <normaloff>:/Icons/Icons/zoomout.png</normaloff>:/Icons/Icons/zoomout.png</iconset>
+   </property>
+   <property name="text">
+    <string>Zoom Out</string>
+   </property>
+  </action>
+  <action name="actionZoom_All">
+   <property name="icon">
+    <iconset resource="resources.qrc">
+     <normaloff>:/Icons/Icons/zoomall.png</normaloff>:/Icons/Icons/zoomall.png</iconset>
+   </property>
+   <property name="text">
+    <string>Zoom All</string>
+   </property>
+  </action>
+  <action name="actionUndo">
+   <property name="icon">
+    <iconset resource="resources.qrc">
+     <normaloff>:/Icons/Icons/undo.png</normaloff>:/Icons/Icons/undo.png</iconset>
+   </property>
+   <property name="text">
+    <string>Undo</string>
+   </property>
+  </action>
+  <action name="actionRedo">
+   <property name="icon">
+    <iconset resource="resources.qrc">
+     <normaloff>:/Icons/Icons/redo.png</normaloff>:/Icons/Icons/redo.png</iconset>
+   </property>
+   <property name="text">
+    <string>Redo</string>
+   </property>
+  </action>
+  <action name="actionDelete">
+   <property name="icon">
+    <iconset resource="resources.qrc">
+     <normaloff>:/Icons/Icons/delete.png</normaloff>:/Icons/Icons/delete.png</iconset>
+   </property>
+   <property name="text">
+    <string>Delete</string>
+   </property>
+  </action>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources>
+  <include location="resources.qrc"/>
+ </resources>
+ <connections/>
+</ui>

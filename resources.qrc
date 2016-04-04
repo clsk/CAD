@@ -1,0 +1,15 @@
+<RCC>
+    <qresource prefix="/Icons">
+        <file>Icons/circle.png</file>
+        <file>Icons/delete.png</file>
+        <file>Icons/rectangle.png</file>
+        <file>Icons/line.png</file>
+        <file>Icons/move.png</file>
+        <file>Icons/pan.png</file>
+        <file>Icons/redo.png</file>
+        <file>Icons/undo.png</file>
+        <file>Icons/zoomall.png</file>
+        <file>Icons/zoomin.png</file>
+        <file>Icons/zoomout.png</file>
+    </qresource>
+</RCC>
