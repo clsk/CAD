@@ -11,5 +11,6 @@
         <file>Icons/zoomall.png</file>
         <file>Icons/zoomin.png</file>
         <file>Icons/zoomout.png</file>
+        <file>Icons/color.png</file>
     </qresource>
 </RCC>

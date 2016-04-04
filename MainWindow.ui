@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>569</width>
-    <height>422</height>
+    <width>557</width>
+    <height>425</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -17,13 +17,19 @@
    <property name="enabled">
     <bool>true</bool>
    </property>
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
    <widget class="QGraphicsView" name="graphicsView">
     <property name="geometry">
      <rect>
       <x>-5</x>
       <y>0</y>
-      <width>581</width>
-      <height>381</height>
+      <width>561</width>
+      <height>361</height>
      </rect>
     </property>
    </widget>
@@ -33,7 +39,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>569</width>
+     <width>557</width>
      <height>22</height>
     </rect>
    </property>
@@ -62,6 +68,7 @@
     <addaction name="actionUndo"/>
     <addaction name="actionRedo"/>
     <addaction name="actionDelete"/>
+    <addaction name="actionChange_Color"/>
    </widget>
    <addaction name="menuView"/>
    <addaction name="menuDraw"/>
@@ -87,6 +94,7 @@
    <addaction name="actionDelete"/>
    <addaction name="actionUndo"/>
    <addaction name="actionRedo"/>
+   <addaction name="actionChange_Color"/>
   </widget>
   <widget class="QStatusBar" name="statusBar"/>
   <action name="actionLine">
@@ -201,6 +209,15 @@
    </property>
    <property name="text">
     <string>Delete</string>
+   </property>
+  </action>
+  <action name="actionChange_Color">
+   <property name="icon">
+    <iconset resource="resources.qrc">
+     <normaloff>:/Icons/Icons/color.png</normaloff>:/Icons/Icons/color.png</iconset>
+   </property>
+   <property name="text">
+    <string>Change Color</string>
    </property>
   </action>
  </widget>
