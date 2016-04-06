@@ -42,6 +42,8 @@ public:
 
     QGraphicsScene* m_scene;
 private:
+    void resetRedoStack();
+
     stack<shared_ptr<ICommand>> m_undoStack;
     stack<shared_ptr<ICommand>> m_redoStack;
     unordered_map<QGraphicsItem*, shared_ptr<Shape>> m_graphicsItems;

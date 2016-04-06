@@ -23,7 +23,6 @@ void EditManager::undo()
     CreateShapeCommand* createCommand = dynamic_cast<CreateShapeCommand*>(m_undoStack.top().get());
     if (createCommand != nullptr) { // If this was a create command, (undo = delete), remove QGraphicsItem
         qDebug() << "This is a Create command";
-
         removeGraphicsItem(createCommand->getShape()->qItem.get());
     } else {
         qDebug() << "This is NOT a Create command";
@@ -31,12 +30,10 @@ void EditManager::undo()
         if (deleteCommand != nullptr) { // if this was a delete command, (undo = create), add QGraphicsItem
             qDebug() << "This is a Delete command";
             auto shape = deleteCommand->getShape();
-            EditManager::addGraphicsItem(shape->qItem.get(), shape);
+            addGraphicsItem(shape->qItem.get(), shape);
         } else {
-
             qDebug() << "This is NOT a Delete command";
         }
-
     }
 
     m_redoStack.push(m_undoStack.top());
@@ -45,6 +42,33 @@ void EditManager::undo()
 
 void EditManager::redo()
 {
+    if (m_redoStack.size() < 1) {
+        return;
+    }
+
+    m_redoStack.top()->execute();
+
+    CreateShapeCommand* createCommand = dynamic_cast<CreateShapeCommand*>(m_undoStack.top().get());
+    if (createCommand != nullptr) { // If this was a create command, add QGraphicsItem
+        qDebug() << "This is a Create command";
+
+        auto shape = createCommand->getShape();
+        addGraphicsItem(shape->qItem.get(), shape);
+
+    } else {
+        qDebug() << "This is NOT a Create command";
+        DeleteShapeCommand* deleteCommand = dynamic_cast<DeleteShapeCommand*>(m_undoStack.top().get());
+        if (deleteCommand != nullptr) { // if this was a delete command, remove QGraphicsItem
+            qDebug() << "This is a Delete command";
+            removeGraphicsItem(deleteCommand->getShape()->qItem.get());
+        } else {
+            qDebug() << "This is NOT a Delete command";
+        }
+
+    }
+
+    m_undoStack.push(m_undoStack.top());
+    m_redoStack.pop();
 }
 
 
@@ -61,6 +85,11 @@ shared_ptr<Shape> EditManager::getShape(QGraphicsItem *graphicsItem)
     } else {
         return nullptr;
     }
+}
+
+void EditManager::resetRedoStack()
+{
+    // TODO: make sure shape objects are deleted for CreateCommands
 }
 
 void EditManager::addGraphicsItem(QGraphicsItem *graphicsItem, shared_ptr<Shape> shape)
@@ -88,4 +117,3 @@ void EditManager::deleteShape(QGraphicsItem *item)
     m_undoStack.push(deleteCommand);
 }
 
-// TODO: When redo stack is reset, make sure shape objects are deleted for CreateCommands

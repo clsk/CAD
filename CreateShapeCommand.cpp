@@ -42,14 +42,17 @@ void CreateShapeCommand::execute()
         item->setFlag(QGraphicsItem::ItemIsSelectable);
     }
 
-    m_shape = shared_ptr<Shape>(new Shape {m_type, m_pos, m_size, m_color, unique_ptr<QGraphicsItem>(item)});
+    if (!m_shape) {
+        m_shape = shared_ptr<Shape>(new Shape {m_type, m_pos, m_size, m_color, unique_ptr<QGraphicsItem>(item)});
+    } else {
+        m_shape->qItem.reset(item);
+    }
 }
 
 void CreateShapeCommand::undo()
 {
     DeleteShapeCommand deleteCommand(m_scene, m_shape);
     deleteCommand.execute();
-    // TODO:
 }
 
 

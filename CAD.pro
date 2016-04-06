@@ -17,7 +17,8 @@ SOURCES += main.cpp\
     Scene.cpp \
     EditManager.cpp \
     CreateShapeCommand.cpp \
-    DeleteShapeCommand.cpp
+    DeleteShapeCommand.cpp \
+    MoveShapeCommand.cpp
 
 HEADERS  += MainWindow.h \
     Scene.h \
@@ -25,7 +26,8 @@ HEADERS  += MainWindow.h \
     Shape.h \
     ICommand.h \
     CreateShapeCommand.h \
-    DeleteShapeCommand.h
+    DeleteShapeCommand.h \
+    MoveShapeCommand.h
 
 FORMS    += MainWindow.ui
 

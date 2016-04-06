@@ -19,6 +19,4 @@ void DeleteShapeCommand::undo()
     CreateShapeCommand createCommand(m_scene, m_shape->type, m_shape->pos, m_shape->size, m_shape->color);
     createCommand.execute();
     m_shape->qItem.reset(createCommand.getShape()->qItem.release());
-    // TODO:
-
 }
