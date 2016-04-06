@@ -18,6 +18,7 @@ void CreateShapeCommand::execute()
 
     QGraphicsItem* item = nullptr;
 
+
     if (m_type == Shape::LINE) {
         cout << "x: " << m_pos.x() << ", y: " << m_pos.y() << endl;
         item = m_scene->addLine(m_pos.x(), m_pos.y(), m_pos.x()+m_size.x(), m_pos.y()-10);
@@ -31,10 +32,9 @@ void CreateShapeCommand::execute()
         m_scene->views().first()->setSceneRect(sceneRect);
         item->setFlag(QGraphicsItem::ItemIsMovable);
         item->setFlag(QGraphicsItem::ItemIsSelectable);
-
     } else if (m_type == Shape::CIRCLE) {
         cout << "x: " << m_pos.x() << ", y: " << m_pos.y() << endl;
-        auto item = m_scene->addEllipse(m_pos.x(), m_pos.y(), m_size.x(), m_size.y());
+        item = m_scene->addEllipse(m_pos.x(), m_pos.y(), m_size.x(), m_size.y());
         m_scene->views().first()->setSceneRect(sceneRect);
         item->setFlag(QGraphicsItem::ItemIsMovable);
         item->setFlag(QGraphicsItem::ItemIsSelectable);

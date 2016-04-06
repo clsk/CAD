@@ -3,6 +3,8 @@
 #include "CreateShapeCommand.h"
 #include "DeleteShapeCommand.h"
 
+#include <QDebug>
+
 using std::make_shared;
 
 EditManager::EditManager(QGraphicsScene* scene) : m_scene(scene)

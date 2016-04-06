@@ -7,8 +7,10 @@ DeleteShapeCommand::DeleteShapeCommand(QGraphicsScene *graphicsScene, shared_ptr
 
 void DeleteShapeCommand::execute()
 {
-   m_scene->removeItem(m_shape->qItem.get());
-   m_shape->qItem.reset();
+    if (m_shape) {
+        m_scene->removeItem(m_shape->qItem.get());
+        m_shape->qItem.reset();
+    }
 }
 
 void DeleteShapeCommand::undo()
