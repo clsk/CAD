@@ -150,3 +150,13 @@ void MainWindow::on_actionDelete_triggered()
         m_editManager.deleteShape(item);
     }
 }
+
+void MainWindow::on_actionUndo_triggered()
+{
+    m_editManager.undo();
+}
+
+void MainWindow::on_actionRedo_triggered()
+{
+    m_editManager.redo();
+}

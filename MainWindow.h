@@ -43,6 +43,10 @@ private slots:
 
     void on_actionDelete_triggered();
 
+    void on_actionUndo_triggered();
+
+    void on_actionRedo_triggered();
+
 private:
     void changeCurrentlySelectedTool(CheckableTool oldTool, CheckableTool newTool, QAction* newToolAction);
 

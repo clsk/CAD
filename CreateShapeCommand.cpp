@@ -1,11 +1,15 @@
-#include "CreateShapeCommand.h"
-
 #include <QGraphicsView>
 
 #include <iostream>
+#include <memory>
+
+#include "CreateShapeCommand.h"
+#include "DeleteShapeCommand.h"
+
 
 using std::cout;
 using std::endl;
+using std::make_shared;
 
 CreateShapeCommand::CreateShapeCommand(QGraphicsScene* scene, Shape::Type type, const QPointF& pos, const QPointF& size, const QColor& color) :
     ICommand(scene), m_type(type), m_pos(pos), m_size(size), m_color(color)
@@ -15,9 +19,7 @@ CreateShapeCommand::CreateShapeCommand(QGraphicsScene* scene, Shape::Type type, 
 void CreateShapeCommand::execute()
 {
     auto sceneRect = m_scene->views().first()->sceneRect();
-
     QGraphicsItem* item = nullptr;
-
 
     if (m_type == Shape::LINE) {
         cout << "x: " << m_pos.x() << ", y: " << m_pos.y() << endl;
@@ -45,7 +47,9 @@ void CreateShapeCommand::execute()
 
 void CreateShapeCommand::undo()
 {
-
+    DeleteShapeCommand deleteCommand(m_scene, m_shape);
+    deleteCommand.execute();
+    // TODO:
 }
 
 

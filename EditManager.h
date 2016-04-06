@@ -25,6 +25,9 @@ class EditManager
 public:
     EditManager(QGraphicsScene* scene);
 
+    void undo();
+    void redo();
+
     // Actions
     void createShape(Shape::Type type, const QPointF &pos, const QPointF &size, const QColor& color);
     void deleteShape(QGraphicsItem* item);
@@ -39,8 +42,8 @@ public:
 
     QGraphicsScene* m_scene;
 private:
-    stack<ICommand> m_undoStack;
-    stack<ICommand> m_redoStack;
+    stack<shared_ptr<ICommand>> m_undoStack;
+    stack<shared_ptr<ICommand>> m_redoStack;
     unordered_map<QGraphicsItem*, shared_ptr<Shape>> m_graphicsItems;
 };
 
