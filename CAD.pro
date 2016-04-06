@@ -14,10 +14,18 @@ TEMPLATE = app
 
 SOURCES += main.cpp\
         MainWindow.cpp \
-    Scene.cpp
+    Scene.cpp \
+    EditManager.cpp \
+    CreateShapeCommand.cpp \
+    DeleteShapeCommand.cpp
 
 HEADERS  += MainWindow.h \
-    Scene.h
+    Scene.h \
+    EditManager.h \
+    Shape.h \
+    ICommand.h \
+    CreateShapeCommand.h \
+    DeleteShapeCommand.h
 
 FORMS    += MainWindow.ui
 

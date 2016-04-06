@@ -12,12 +12,11 @@ Scene::Scene()
     painter.drawPoint(0, 0);
     painter.drawPoint(m_GRID_SPACING, m_GRID_SPACING);
 
-    this->setBackgroundBrush(pixmap);
+   this->setBackgroundBrush(pixmap);
 }
 
 void Scene::drawBackground(QPainter *painter, const QRectF &rect)
 {
-    painter->save();
     double x = rect.x();
     double y = rect.y();
 
@@ -33,7 +32,5 @@ void Scene::drawBackground(QPainter *painter, const QRectF &rect)
     // Y axis
     painter->setPen(Qt::red);
     painter->drawLine(0, 0, 0, -40);
-
-    painter->end();
 }
 
